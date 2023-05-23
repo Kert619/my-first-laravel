@@ -52,7 +52,7 @@
                     <td>{{ $product->category_name }}</td>
                     <td>{{ number_format($product->product_price, 2) }}</td>
                     <td>{{ number_format($product->product_stocks) }}</td>
-                    <td class="text-end text-nowrap d-flex justify-content-end gap-2">
+                    <td class="text-end text-nowrap">
                         <a class="btn btn-sm btn-warning d-inline-flex align-items-center gap-1 edit-product"
                             data-url="{{ route('products.get', ['id' => $product->id]) }}" data-bs-toggle="modal" ,
                             data-bs-target="#products-modal">
