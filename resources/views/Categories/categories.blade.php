@@ -46,7 +46,7 @@
                 <tr>
                     <th scope="row">{{ $count++ }}</th>
                     <td>{{ $category->category_name }}</td>
-                    <td class="text-end text-nowrap d-flex justify-content-end gap-2">
+                    <td class="text-end text-nowrap">
                         <a data-url="{{ route('categories.get', ['id' => $category->id]) }}"
                             class="btn btn-sm btn-warning d-inline-flex align-items-center gap-1 edit-category"
                             data-bs-toggle="modal" data-bs-target="#category-modal">
