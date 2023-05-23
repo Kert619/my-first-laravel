@@ -1,0 +1,21 @@
+.hide {
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+}
+.wrapper {
+    min-height: 100vh;
+}
+.sidebar {
+    min-width: 280px;
+    max-width: 280px;
+}
+
+@media screen and (max-width: 768px) {
+    .sidebar {
+        min-width: 70px;
+        max-width: 70px;
+    }
+    .sidebar__logo-text {
+        display: none;
+    }
+}
