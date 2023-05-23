@@ -1,9 +1,11 @@
 const editButtons = document.querySelectorAll(".edit-product");
+const deleteButtons = document.querySelectorAll(".delete-product");
 const btnAdd = document.querySelector(".btn-add");
 const modal = document.querySelector("#products-modal");
+const deleteModal = document.querySelector("#delete-modal");
 const modalTitle = modal.querySelector(".modal-title");
 const form = modal.querySelector("form");
-const btnSave = form.querySelector(".btn-save");
+const btnAction = form.querySelector(".btn-action");
 const productNameInput = form.querySelector("#product-name");
 const categoryInput = form.querySelector("#category");
 const productPriceInput = form.querySelector("#product-price");
@@ -14,9 +16,9 @@ btnAdd.addEventListener("click", function(){
     form.reset();
     const url = this.dataset.url;
     modalTitle.textContent = "ADD PRODUCT";
-    btnSave.classList.remove("btn-success");
-    btnSave.classList.add("btn-primary");
-    btnSave.textContent = "Save Product";
+    btnAction.classList.remove("btn-success");
+    btnAction.classList.add("btn-primary");
+    btnAction.textContent = "Save Product";
 
     const existingMethodInput = form.querySelector('input[name="_method"]');
     if (existingMethodInput) {
@@ -38,9 +40,9 @@ editButtons.forEach((btn) => {
             }
 
             modalTitle.textContent = "UPDATE PRODUCT";
-            btnSave.classList.add("btn-success");
-            btnSave.classList.remove("btn-primary");
-            btnSave.textContent = "Save Changes";
+            btnAction.classList.add("btn-success");
+            btnAction.classList.remove("btn-primary");
+            btnAction.textContent = "Save Changes";
 
             productNameInput.value = data.product_name;
             productPriceInput.value = data.product_price;
@@ -62,4 +64,11 @@ editButtons.forEach((btn) => {
             console.error(error);
         }
     });
+})
+
+deleteButtons.forEach((btn) => {
+    btn.addEventListener("click", function(e){
+        const url = this.dataset.url;
+        deleteModal.querySelector("form").action = url;
+    })
 })

@@ -65,18 +65,18 @@
                             </svg>
                             <span>Edit</span>
                         </a>
-                        <form action="{{ route('products.delete', ['id' => $product->id]) }}" method="POST">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn btn-sm btn-danger d-inline-flex align-items-center gap-1">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                    class="bi bi-archive-fill" viewBox="0 0 16 16">
-                                    <path
-                                        d="M12.643 15C13.979 15 15 13.845 15 12.5V5H1v7.5C1 13.845 2.021 15 3.357 15h9.286zM5.5 7h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1zM.8 1a.8.8 0 0 0-.8.8V3a.8.8 0 0 0 .8.8h14.4A.8.8 0 0 0 16 3V1.8a.8.8 0 0 0-.8-.8H.8z" />
-                                </svg>
-                                <span>Delete</span>
-                            </button>
-                        </form>
+
+                        <button type="button"
+                            class="btn btn-sm btn-danger d-inline-flex align-items-center gap-1 delete-product"
+                            data-url="{{ route('products.delete', ['id' => $product->id]) }}" data-bs-toggle="modal"
+                            data-bs-target="#delete-modal">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-archive-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M12.643 15C13.979 15 15 13.845 15 12.5V5H1v7.5C1 13.845 2.021 15 3.357 15h9.286zM5.5 7h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1zM.8 1a.8.8 0 0 0-.8.8V3a.8.8 0 0 0 .8.8h14.4A.8.8 0 0 0 16 3V1.8a.8.8 0 0 0-.8-.8H.8z" />
+                            </svg>
+                            <span>Delete</span>
+                        </button>
                     </td>
                 </tr>
                 @endforeach
@@ -128,7 +128,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-sm btn-danger" data-bs-dismiss="modal">Cancel</button>
-                    <button type="submit" class="btn btn-sm btn-primary btn-save">Save Product</button>
+                    <button type="submit" class="btn btn-sm btn-primary btn-action">Save Product</button>
                 </div>
             </form>
         </div>
