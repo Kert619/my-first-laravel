@@ -1,6 +1,6 @@
 @extends("layout")
 
-@section("title", "Products HELLO")
+@section("title", "Products")
 
 @section("content")
 <div class="row m-0 g-3 align-items-center justify-content-end">
