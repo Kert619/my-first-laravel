@@ -1,17 +1,19 @@
 const addCategory = document.querySelector(".btn-add");
 const editButtons = document.querySelectorAll(".edit-category");
+const deleteButtons = document.querySelectorAll(".delete-category");
 const modal = document.querySelector("#category-modal");
+const deleteModal = document.querySelector("#delete-modal");
 const categoryNameInput = modal.querySelector("#category-name");
-const btnSave = modal.querySelector(".btn-save");
+const btnAction = modal.querySelector(".btn-action");
 const modalTitle = modal.querySelector(".modal-title");
 const form = modal.querySelector("form");
 
 addCategory.addEventListener("click", function () {
     form.reset();
     modalTitle.textContent = "ADD CATEGORY";
-    btnSave.textContent = "Save Category";
-    btnSave.classList.add("btn-primary");
-    btnSave.classList.remove("btn-success");
+    btnAction.textContent = "Save Category";
+    btnAction.classList.add("btn-primary");
+    btnAction.classList.remove("btn-success");
     const url = this.dataset.url;
 
     const existingMethodInput = form.querySelector('input[name="_method"]');
@@ -35,9 +37,9 @@ editButtons.forEach((btn) => {
 
             modalTitle.textContent = "UPDATE CATEGORY";
             categoryNameInput.value = data.category_name;
-            btnSave.classList.remove("btn-primary");
-            btnSave.classList.add("btn-success");
-            btnSave.textContent = "Save Changes";
+            btnAction.classList.remove("btn-primary");
+            btnAction.classList.add("btn-success");
+            btnAction.textContent = "Save Changes";
 
             const html = "<input type='hidden' name='_method' value='PUT'/>";
             form.insertAdjacentHTML("beforeend", html);
@@ -48,3 +50,10 @@ editButtons.forEach((btn) => {
         }
     });
 });
+
+deleteButtons.forEach((btn) => {
+    btn.addEventListener("click", function(e){
+        const url = this.dataset.url;
+        deleteModal.querySelector("form").action = url;
+    })
+})
