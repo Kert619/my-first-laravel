@@ -50,7 +50,7 @@ class ProductsController extends Controller
                 'product_stocks' => $request->input('product_stocks')
             ];
 
-            $product = ProductsModel::create($data);
+            ProductsModel::create($data);
 
             return redirect()->back()->with('success', 'Product added successfully');
         } catch (\Exception $e) {

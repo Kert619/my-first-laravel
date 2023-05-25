@@ -109,8 +109,8 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-sm btn-danger" data-bs-dismiss="modal">Cancel</button>
                     <button type="submit" class="btn btn-sm btn-primary btn-action">Save Product</button>
+                    <button type="button" class="btn btn-sm btn-danger" data-bs-dismiss="modal">Cancel</button>
                 </div>
             </form>
         </div>

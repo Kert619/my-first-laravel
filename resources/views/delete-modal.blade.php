@@ -12,8 +12,8 @@
                     <p>{{ $delete_message }}</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-sm btn-danger" data-bs-dismiss="modal">Cancel</button>
                     <button type='submit' class="btn btn-primary btn-sm">Confirm</button>
+                    <button type="button" class="btn btn-sm btn-danger" data-bs-dismiss="modal">Cancel</button>
                 </div>
             </form>
         </div>

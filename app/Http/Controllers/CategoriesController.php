@@ -32,7 +32,7 @@ class CategoriesController extends Controller
                 'category_name' => $request->input('category_name')
             ];
 
-            $category = CategoriesModel::create($data);
+            CategoriesModel::create($data);
 
             return redirect()->back()->with('success', 'Category added successfully');
         } catch (\Exception $e) {
