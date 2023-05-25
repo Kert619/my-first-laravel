@@ -88,7 +88,6 @@
 @else
 <h1 class="text-center mt-5 text-danger">NO RESULTS FOUND</h1>
 @endif
-
 <div class="modal fade" tabIndex="-1" id="products-modal" data-bs-backdrop="static">
     <div class="modal-dialog">
         <div class="modal-content">
