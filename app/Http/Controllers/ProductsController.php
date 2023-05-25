@@ -21,7 +21,7 @@ class ProductsController extends Controller
         $products = ProductsModel::select('products.*', 'categories.category_name')
             ->join('categories', 'products.category_id', '=', 'categories.id')
             ->where('product_name', 'like', '%' . $search . '%')
-            ->get();
+            ->paginate(2);
         $categories = CategoriesModel::select('id', 'category_name')->get();
         return view("Products/products", ['products' => $products, 'categories' => $categories]);
     }

@@ -84,7 +84,15 @@
             </tbody>
         </table>
     </div>
+
+    <nav>
+        <ul class="pagination justify-content-end">
+            <li class="page-item"><a class="page-link shadow-none" href="#">Previous</a></li>
+            <li class="page-item"><a class="page-link shadow-none" href="#">Next</a></li>
+        </ul>
+    </nav>
 </div>
+
 @else
 <h1 class="text-center mt-5 text-danger">NO RESULTS FOUND</h1>
 @endif
