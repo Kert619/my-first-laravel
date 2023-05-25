@@ -106,5 +106,14 @@
         </div>
     </div>
 </div>
+
+@php
+
+$delete_title = 'DELETE CATEGORY';
+$delete_message = 'Do you want to delete this category?';
+
+@endphp
+
+@include('../delete-modal');
 <script src="{{ asset('js/pages/categories.js') }}"></script>
 @endsection
